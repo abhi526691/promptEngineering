@@ -100,7 +100,19 @@ class PromptEngineering(Base):
         few_shot_list = self.random_sample_cot(sample_size)
         if not few_shot_list:
             return "Error: Chain of Thought (CoT) prompt generation failed due to insufficient data."
-        return self.generate_response(few_shot_list, human_input)
+        response = self.generate_response(few_shot_list, human_input)
+        # Check if "Step 2" and "Step 3" exist in the text
+        if "Step 2: Address the user\'s main concern." in response and "Step 3: Provide a clear solution or suggestion." in response:
+            # Extract content after "Step 2" and "Step 3"
+            start = response.find("Step 2: Address the user\'s main concern.") + \
+                len("Step 2: Address the user\'s main concern.\n")
+            relevant_response = response[start:].replace(
+                "Step 3: Provide a clear solution or suggestion.\n", "").strip()
+            return relevant_response
+        else:
+            return response
+
+        return response
 
     def directional_stimulus_prompting(self, human_input, hint="empathetic and structured"):
         dsp_prompt = self.gpt_dsp(human_input, hint=hint)
@@ -109,7 +121,7 @@ class PromptEngineering(Base):
 
 # Streamlit UI
 st.set_page_config(page_title="Chatbot with Prompt Engineering", layout="wide")
-st.title("ChatGPT-like Chatbot with Prompt Engineering")
+st.title("Chatbot with Prompt Engineering")
 
 # Load the dataset once
 try:
