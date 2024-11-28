@@ -113,7 +113,7 @@ st.title("ChatGPT-like Chatbot with Prompt Engineering")
 
 # Load the dataset once
 try:
-    dataset = pd.read_csv("final_preprocessed.csv")
+    dataset = pd.read_csv("final.csv")
 except FileNotFoundError:
     st.error("Error: 'final_preprocessed.csv' not found.")
     dataset = pd.DataFrame(columns=["human", "gpt", "gpt_cot"])
