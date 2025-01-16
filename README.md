@@ -32,7 +32,7 @@ This project demonstrates various prompting strategies to guide language models 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/abhi526691/NLP_Assignment4
+   git clone https://github.com/abhi526691/promptEngineering
    cd base_directory
    ```
 
