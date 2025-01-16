@@ -33,7 +33,7 @@ This project demonstrates various prompting strategies to guide language models 
 
    ```bash
    git clone https://github.com/abhi526691/NLP_Assignment4
-   cd NLP_Assignment4
+   cd base_directory
    ```
 
 2. Install the required dependencies:
