@@ -105,7 +105,7 @@ The following prompting strategies are explored:
 
 ## Acknowledgements
 
-- **Contributors**: [Abhishek Pandey](https://github.com/abhi526691), RK Dhakal
+- **Contributors**: [Abhishek Pandey](https://github.com/abhi526691), [Ram Krishna Dhakal](https://github.com/rkdhakal)
 - **Tools Used**:
   - [Streamlit](https://streamlit.io/) for UI development.
   - [Hugging Face Transformers](https://huggingface.co/transformers/) for implementing BERT-based evaluations.
